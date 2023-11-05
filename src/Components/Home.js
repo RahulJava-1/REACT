@@ -48,7 +48,7 @@ export default function Home() {
   useEffect(()=>{
     localStorage.setItem("todos",JSON.stringify(todos));
   }, [todos])
-  
+
   //{
   //  sno: 1,
   //  title:"First Todo",
@@ -71,8 +71,10 @@ export default function Home() {
   return (
 
     <div>
+        <div className='container'>
+        <AddTodo addTodo={addTodo}/>
           <Todos todos={todos} onDelete={onDelete}/>
-          <AddTodo addTodo={addTodo}/>
+    </div>
     </div>
   )
 }
