@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function AddTodo({addTodo}) {
+export const AddTodo = ({addTodo}) => {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
 
@@ -8,10 +8,13 @@ export default function AddTodo({addTodo}) {
     e.preventDefault();
 
     if(!title || !desc){
-        alert("Title or Description must be required")
+        alert("Title or Description must be required");
     }
-
+    else{
     addTodo(title, desc);
+    setTitle("");
+    setDesc("");
+    }
   }
 
   return (
@@ -22,7 +25,7 @@ export default function AddTodo({addTodo}) {
           
           <div className="mb-3">
           
-            <label for="title" className="form-label">
+            <label htmlFor="title" className="form-label">
               Title
             </label>
           
@@ -38,7 +41,7 @@ export default function AddTodo({addTodo}) {
           
           <div className="mb-3">
             
-            <label for="desc" className="form-label">
+            <label htmlFor="desc" className="form-label">
               Description
             </label>
             
